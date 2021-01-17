@@ -11,7 +11,7 @@ jQuery( document ).ready(function( $ ) {
 
 		$.ajax({
 			type: 'POST',
-			url: 'script.php',
+			url: 'recap.php',
 			data: $(form).serialize(),
 			dataType: 'json',
 			success: function(data){

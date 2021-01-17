@@ -8,33 +8,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="design.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
+        <div class="navbar">
+            <img src="images/logo.png" class="logo" onclick="redirect5()">
+            <div class="menu-wrap">
+                <input type="checkbox" class="toggler">
+                <div class="hamburger"><div></div></div>
+                <div class="menu">
+                  <div>
+                    <div>
+                      <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="informations.php">Informations</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <img src="images/menu.png" class="menu-icon">
         
+        </div>
         
-        <form id="booking-form" class="booking-form" name="form1" method="post" action="recap.php">
+        <form id="booking-form" class="booking-form" name="form1" method="post" action="">
             
             <div class="h1">Trip Reservation Form</div>
             
             <div id="form-content">
                 <div class="group">
-                    <label for="date-from">From</label>
+                    <label for="date-from">Date</label>
                     <div class="addon-right">
                         <input id="date-from" name="date-from" class="form-control" type="text">
                         <i class="fa fa-calendar"></i>
                     </div>
                 </div>
-                <div class="group">
-                    <label for="date-to">To</label>
-                    <div class="addon-right">
-                        <input id="date-to" name="date-to" class="form-control" type="text">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                </div>
+                
 
                 
                 
@@ -79,10 +94,7 @@
                     <label class="empty"></label>
                     <div><input name="submit" type="submit" value="Submit"/></div>
                 </div>
-                <div class="group submit">
-                    <label class="empty"></label>
-                    <div><input name="submit" type="submit" onclick="history.go(-1)" value="Cancel"/></div>
-                </div>
+                
             </div>
             
         </form>
@@ -91,5 +103,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>     
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
