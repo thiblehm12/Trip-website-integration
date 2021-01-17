@@ -10,14 +10,14 @@
     <?php
 
 
-            if(!empty($_POST['name'])) //get = store details from guests
+            if(!empty($_POST['name'])) //if something is written, we print the name, else nothing
             {
-               echo '<p> Your name is '.htmlspecialchars($_POST['name']);
+               echo '<p> Your name is '.htmlspecialchars($_POST['name']); //we print
 
             }
-            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) //if the email is validate, a good email, 
             {
-                if(!empty($_POST['email'])) //post = store details from forum
+                if(!empty($_POST['email'])) //if something is written, we prin the email, else nothing
                 {
                    echo '<p> Your email is '.htmlspecialchars($_POST['email']);
                 }
@@ -53,23 +53,23 @@
             $name = $_POST["name"];
             $country = $_POST["country"];
             $nbPersons = $_POST["adults"];
-            $date = $_POST["date-to"] - $_POST["date-from"];
+            $date = $_POST["date-from"];
 
 //--------------------------------HERE YOU HAVE TO CHANGE WITH YOUR VALUES -----------------------------//
             // Insert new user into database
             
                $sql = "INSERT INTO book ('name', email, country, nbPersons, 'date') VALUES (?, ?, ?, ?, ?);";
             
-               $stmt = mysqli_stmt_init($conn);
-               if (!mysqli_stmt_prepare($stmt, $sql)) {
+               $stmt = mysqli_stmt_init($conn);//Initializes a statement and returns an object for use with mysqli_stmt_prepare 
+               if (!mysqli_stmt_prepare($stmt, $sql)) {  // Prepare an SQL statement for execution
                   header("location: ../signup.php?error=stmtfailed");
                   exit();
                }
             
-               mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $country, $nbPersons, $date);
-               mysqli_stmt_execute($stmt);
-               mysqli_stmt_close($stmt);
-               mysqli_close($conn);
+               mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $country, $nbPersons, $date);//Binds variables to a prepared statement as parameters
+               mysqli_stmt_execute($stmt);//Executes a prepared Query
+               mysqli_stmt_close($stmt);//Closes a prepared statement
+               mysqli_close($conn);//Closes the function
                header("location: ../signup.php?error=none");
                exit();
             

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Informations/title>
+    <title>Informations</title>
 </head>
 <body>
     <h1>Information about users booking</h1>
